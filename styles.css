@@ -43,6 +43,9 @@ main {
     margin: 20px auto;
     padding: 0 20px;
 }
+.descicao{
+    font-size: 1.5em;
+}
 
 .gift-list h2 {
     font-family: 'Playfair Display', serif; /* Fonte para subtítulos */
