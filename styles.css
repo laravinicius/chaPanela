@@ -49,8 +49,7 @@ body {
     margin: 0;
     background-color: #fdfdfb;
     color: #475137;
-  }
-  
+  }  
   
   
   .names {
@@ -75,7 +74,7 @@ body {
   }
   
   .date {
-    font-size: 1rem;
+    font-size: 2rem;
     color: #73808c;
     margin-top: 40px;
     z-index: 1;
@@ -116,16 +115,19 @@ body {
 }
 
 .gift-list h2 {
-    font-size: 1.5em;
+    font-size: 2em;
     margin-bottom: 10px;
-    text-align: center;
     color: #D28A5A;
+    text-align: center;
 }
+
 
 .gift-list p {
     text-align: center;
     margin-bottom: 20px;
+
 }
+
 
 .gift-grid {
     display: grid;
