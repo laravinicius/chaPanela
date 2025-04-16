@@ -169,7 +169,7 @@ body {
     flex-shrink: 0;
 }
 .gift-image img {
-    width: 100%; /* Ensure images are responsive */
+    width: 100%; 
     height: auto; /* Maintain aspect ratio */
 }
 h3 {
@@ -179,8 +179,9 @@ h3 {
 }
 
 .gift-image img {
-    width: 100%;
-    height: auto;
+    /* width: 100%; */
+    /* height: auto; */
+    max-width: 500px;
     border-radius: 5px;
 }
 
