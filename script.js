@@ -5,7 +5,17 @@ async function reserveItem(link) {
 
     const itemId = link.getAttribute('data-id');
 
-    // Atualiza o campo "reservado" para true
+    // Atualiza visualmente todos os links com mesmo data-id imediatamente
+    document.querySelectorAll(`.gift-link[data-id="${itemId}"]`).forEach(linkEl => {
+        linkEl.textContent = 'Item já comprado';
+        linkEl.classList.add('unavailable');
+        linkEl.removeAttribute('href');
+        linkEl.removeAttribute('onclick');
+        linkEl.style.pointerEvents = 'none';
+        linkEl.style.opacity = '0.6';
+    });
+
+    // Atualiza o campo "reservado" na planilha
     await fetch(`${API_URL}/id/${itemId}`, {
         method: 'PATCH',
         headers: {
@@ -14,10 +24,10 @@ async function reserveItem(link) {
         body: JSON.stringify({ reservado: 'true' })
     });
 
-    // Atualiza visualmente os botões
+    // Como garantia, atualiza todos os links novamente após 1 segundo
     setTimeout(updateGiftLinks, 1000);
 
-    // Abre link do presente
+    // Abre link do presente (ex: Mercado Pago)
     if (link.href && link.href !== '#') {
         window.open(link.href, '_blank');
     }
@@ -31,7 +41,7 @@ async function updateGiftLinks() {
         const itemId = link.getAttribute('data-id');
         const item = items.find(i => i.id === itemId);
 
-        if (item && item.reservado === 'true') {
+        if (item && item.reservado && item.reservado.toString().toLowerCase() === 'true') {
             link.textContent = 'Item já comprado';
             link.classList.add('unavailable');
             link.removeAttribute('href');
@@ -42,4 +52,5 @@ async function updateGiftLinks() {
     });
 }
 
+// Atualiza todos os botões ao carregar a página
 document.addEventListener('DOMContentLoaded', updateGiftLinks);
