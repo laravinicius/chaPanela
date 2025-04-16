@@ -9,7 +9,7 @@
 
 body {
     margin: 0;
-    background-color: #fdfdfb;
+    background-color: #f5f5ef;
     color: #475137;
   }
 
@@ -53,10 +53,11 @@ body {
   
   
   .names {
-    font-size: 4em;
+    font-size: 3.5em;
     font-weight: normal;
     color: #475137;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 20px;
@@ -74,8 +75,8 @@ body {
   }
   
   .date {
-    font-size: 2rem;
-    color: #73808c;
+    font-size: 2.5rem;
+    color: black;
     margin-top: 40px;
     z-index: 1;
     position: relative;
@@ -109,7 +110,21 @@ body {
     color: #333; /* cor do texto */
   }
   
-  
+  .home{
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+
+  }
+
+  .home p{
+    color: black;
+  }
+  .gift-imagem{
+    margin-top: 50px;
+    width: 100px;
+  }
 .descricao{
     font-size: 1.5em;
 }
