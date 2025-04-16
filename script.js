@@ -4,6 +4,7 @@ async function reserveItem(link) {
     event.preventDefault();
 
     const itemId = link.getAttribute('data-id');
+    const originalHref = link.href; // salva o link original antes de remover
 
     // Atualiza visualmente todos os links com mesmo data-id imediatamente
     document.querySelectorAll(`.gift-link[data-id="${itemId}"]`).forEach(linkEl => {
@@ -27,9 +28,9 @@ async function reserveItem(link) {
     // Como garantia, atualiza todos os links novamente após 1 segundo
     setTimeout(updateGiftLinks, 1000);
 
-    // Abre link do presente (ex: Mercado Pago)
-    if (link.href && link.href !== '#') {
-        window.open(link.href, '_blank');
+    // Abre o link original do presente
+    if (originalHref && originalHref !== '#') {
+        window.open(originalHref, '_blank');
     }
 }
 
