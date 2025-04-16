@@ -63,7 +63,7 @@ body {
     gap: 20px;
     z-index: 1;
     position: relative;
-    margin-top: 400px;
+    margin-top: 600px;
   }
   
   .names .and {
@@ -81,12 +81,13 @@ body {
     z-index: 1;
     position: relative;
     letter-spacing: 1px;
+    margin-bottom: 40px;
   }
 
   .header {
     position: relative;
     width: 100%;
-    height: 100vh; 
+    height: 100cap; 
     overflow: hidden;
   }
 
